@@ -7,12 +7,7 @@ The project is devided into three services, that are connected by REST API. All 
 
 
 Note that in this project I worked with H2 database, so for your peoject you will need to do this steps:
-1. Add dependency to pom.xml
-   <dependency>
-    <groupId>postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>VERSION</version>
-</dependency>
+1. Add PostgreSQL dependency to pom.xml
 2. Download PostgreSQL driver, simular as for JDBC
 3. Chages in application.properties:
 spring.datasource.url=jdbc:postgresql://localhost:5432/customers
