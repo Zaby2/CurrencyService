@@ -12,6 +12,6 @@ Note that in this project I worked with H2 database, so for your peoject you wil
 3. Make changes in application.properties
    
 ## TODO
-1. Adding Spring Cloud Eureka server, for flexibility of the whole system and add Load Balancer
+1. Adding Spring Cloud Eureka server, for flexibility of the whole system and add Load Balancer Done
 2. Later it is better to change REST API to Kafka of RabbitMQ
-3. Put constant variables into application.properties file
+3. Put constant variables into application.properties file Done
