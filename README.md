@@ -11,7 +11,7 @@ Note that in this project I worked with H2 database, so for your peoject you wil
 2. Download PostgreSQL driver, simular as for JDBC
 3. Make changes in application.properties
    
-Note that here is just example of dockerfile, so you need to create the simular one for each of services if ypu need to
+Note that here is just example of dockerfile, so you need to create the simular one for each of services if you need 
 
 
 ## TODO
