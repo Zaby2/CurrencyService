@@ -1,6 +1,7 @@
 package com.microservice.example.conversionservice.currencyservice.bankMicroService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpMethod;
@@ -20,11 +21,15 @@ public class ExchangeDataService {
     @Autowired
     Environment environment;
 
+    @Autowired
+    RestTemplate restTemplate;
 
+    @Value("${currency.url}")
+    private String url;
     @Scheduled(fixedRate = 130000)
     private void reStoreData() {
         rep.deleteAll();
-        ResponseEntity<List<ExchangeData>> response = new RestTemplate().exchange("http://localhost:1234/cur-data/live/live" ,HttpMethod.GET, null,new ParameterizedTypeReference<List<ExchangeData>>() {}) ;
+        ResponseEntity<List<ExchangeData>> response = restTemplate.exchange( url ,HttpMethod.GET, null,new ParameterizedTypeReference<List<ExchangeData>>() {}) ;
         // need to remove this hardcode
         List<ExchangeData> result = response.getBody();
         for (ExchangeData exchangeData : result) {
